@@ -1,0 +1,16 @@
+[
+{
+  "modid": "rifthearts",
+  "name": "Rift Hearts",
+  "description": "Simple mod that shows vanilla hearts in Stillgore Chateau and hides them outside of it. Useful for vampire slayer.\n\nConfig:\nAuto: Hearts are displayed based on location.\nOn: Hearts are always displayed.\nOff: Hearts are never displayed.",
+  "version": "1.0",
+  "mcversion": "1.8.9",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Sinily"],
+  "credits": "",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
