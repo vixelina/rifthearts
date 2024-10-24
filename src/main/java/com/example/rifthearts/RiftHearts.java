@@ -26,7 +26,7 @@ import java.util.Set;
 @Mod(modid = RiftHearts.MODID, version = RiftHearts.VERSION, guiFactory = "com.example.rifthearts.RiftHearts$GuiFactory")
 public class RiftHearts {
     public static final String MODID = "rifthearts";
-    public static final String VERSION = "1.0";
+    public static final String VERSION = "1.1";
 
     private static final String CONFIG_CATEGORY = "general";
     private static final String CONFIG_HEART_MODE = "heartMode";
@@ -68,7 +68,7 @@ public class RiftHearts {
                 "Heart visibility mode (auto, off, on)", new String[] { "auto", "off", "on" });
 
         if (heartMode.equals("auto")) {
-            showHearts = checkScoreboardForStillgoreChateau();
+            showHearts = checkScoreboard();
         } else if (heartMode.equals("off")) {
             showHearts = false;
         } else if (heartMode.equals("on")) {
@@ -76,10 +76,10 @@ public class RiftHearts {
         }
     }
 
-    private boolean checkScoreboardForStillgoreChateau() {
+    private boolean checkScoreboard() {
         List<String> scoreboardLines = getScoreboardLines();
         for (String line : scoreboardLines) {
-            if (line.contains("Stillgore")) {
+            if (line.contains("Stillgore") || line.contains("Oubliette")) {
                 return true;
             }
         }
