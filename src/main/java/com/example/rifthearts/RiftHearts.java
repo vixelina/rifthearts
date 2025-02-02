@@ -19,14 +19,16 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.gameevent.TickEvent;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
 @Mod(modid = RiftHearts.MODID, version = RiftHearts.VERSION, guiFactory = "com.example.rifthearts.RiftHearts$GuiFactory")
 public class RiftHearts {
     public static final String MODID = "rifthearts";
-    public static final String VERSION = "1.1";
+    public static final String VERSION = "1.2";
 
     private static final String CONFIG_CATEGORY = "general";
     private static final String CONFIG_HEART_MODE = "heartMode";
@@ -78,12 +80,9 @@ public class RiftHearts {
 
     private boolean checkScoreboard() {
         List<String> scoreboardLines = getScoreboardLines();
-        for (String line : scoreboardLines) {
-            if (line.contains("Stillgore") || line.contains("Oubliette")) {
-                return true;
-            }
-        }
-        return false;
+        Set<String> keywords = new HashSet<>(Arrays.asList("Stillgore", "Oubliette", "Time Chamber", "Wizard Brawl"));
+
+        return scoreboardLines.stream().anyMatch(line -> keywords.stream().anyMatch(line::contains));
     }
 
     private List<String> getScoreboardLines() {
