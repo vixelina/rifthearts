@@ -80,7 +80,7 @@ public class RiftHearts {
 
     private boolean checkScoreboard() {
         List<String> scoreboardLines = getScoreboardLines();
-        Set<String> keywords = new HashSet<>(Arrays.asList("Stillgore", "Oubliette"));
+        Set<String> keywords = new HashSet<>(Arrays.asList("Stillgore", "Oubliette", "Time Ch", "Wizard Br"));
 
         return scoreboardLines.stream().anyMatch(line -> keywords.stream().anyMatch(line::contains));
     }
