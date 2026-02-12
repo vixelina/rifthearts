@@ -1,0 +1,29 @@
+{
+	"schemaVersion": 1,
+	"id": "rifthearts",
+	"version": "${version}",
+	"name": "rifthearts",
+	"description": "Simple mod that shows vanilla hearts in Stillgore Chateau and hides them outside of it. Useful for vampire slayer.\n\nConfig:\nAuto: Hearts are displayed based on location.\nOn: Hearts are always displayed.\nOff: Hearts are never displayed.",
+	"authors": [
+		"Sinily"
+	],
+	"contact": {
+		"sources": "https://github.com/vixelina/rifthearts"
+	},
+	"icon": "assets/icon.png",
+	"environment": "client",
+	"entrypoints": {
+		"client": [
+			"sinily.rifthearts.RiftHearts"
+		]
+	},
+	"mixins": [
+		"rifthearts.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.18.4",
+		"minecraft": ">=1.21 <1.22",
+		"java": ">=21",
+		"fabric-api": "*"
+	}
+}
